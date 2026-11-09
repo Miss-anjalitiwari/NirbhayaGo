@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> NirbhayaGo - Women Travel Safety</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+</head>
+
+<body>
+
+<div class="app">
+
+<header>
+    <div class="logo">♀ NirbhayaGo</div>
+    <button onclick="alert('Notifications')"><i class="fa-solid fa-bell"></i></button>
+</header>
+
+<!-- HOME -->
+<div id="home" class="page active">
+
+<div class="hero">
+    <h2>Safe Travel,<br>Stronger Women 💜</h2>
+    <i class="fa-solid fa-bell"></i>
+    <p>Your journey. Your community. Your safety.</p>
+</div>
+
+<h3>What do you need today?</h3>
+
+<div class="grid">
+    <div class="card" onclick="show('booking')">
+        <i class="fa-solid fa-calendar-check"></i>
+        <h4>Book Travel Assistance</h4>
+    </div>
+
+    <div class="card" onclick="show('partner')">
+        <i class="fa-solid fa-handshake"></i>
+    
+        <h4>Find Travel Partner</h4>
+    </div>
+
+    <div class="card" onclick="show('community')">
+        <i class="fa-solid fa-people-line"></i>
+        <h4>Join Community</h4>
+    </div>
+
+    <div class="card" onclick="show('safety')">
+        <i class="fa-solid fa-user-shield"></i>
+        <h4>Safety Center</h4>
+    </div>
+</div>
+
+<h3>Quick Features</h3>
+
+<div class="box" onclick="show('tracking')">
+    <i class="fa-solid fa-map-location-dot"></i> Live Trip Tracking →
+</div>
+
+<div class="box" onclick="show('safety')">
+<i class="fa-solid fa-exclamation"></i> Emergency Support →
+</div>
+
+</div>
+
+<!-- BOOKING -->
+<div id="booking" class="page">
+
+<h2>Book Travel Assistance</h2>
+
+<label>From</label>
+<input id="from" placeholder="Dhule">
+
+<label>To</label>
+<input id="to" placeholder="Pune">
+
+<label>Date</label>
+<input id="date" type="date">
+
+<label>Travel Time</label>
+<input id="time" type="time">
+
+<button class="primary" onclick="findAssistants()">
+Find Available Women →
+</button>
+
+<div id="assistants"></div>
+
+</div>
+
+<!-- PARTNER -->
+<div id="partner" class="page">
+
+<h2>Find Travel Partner 👭</h2>
+<p class="small">Find women travelling on your route.</p>
+
+<label>From</label>
+<input id="pfrom" placeholder="Dhule">
+
+<label>To</label>
+<input id="pto" placeholder="Pune">
+
+<label>Travel Date</label>
+<input id="pdate" type="date">
+
+<button class="primary" onclick="findPartners()">
+Find Partner →
+</button>
+
+<div id="partners"></div>
+
+</div>
+
+<!-- COMMUNITY -->
+<div id="community" class="page">
+
+<h2>Women Community </h2>
+
+<textarea id="postText" placeholder="Share your travel experience..."
+style="width:100%;padding:15px;margin-top:15px;border-radius:12px;border:1px solid #ddd"></textarea>
+
+<button class="primary" onclick="addPost()">Publish Post</button>
+
+<div id="posts"></div>
+
+</div>
+
+<!-- SAFETY -->
+<div id="safety" class="page">
+
+<h2>Safety Center</h2>
+
+<div class="grid">
+    <div class="card" onclick="show('tracking')">📍<h4>Trip Tracking</h4></div>
+    <div class="card" onclick="alert('Add emergency contacts in profile')">📞<h4>Emergency Contacts</h4></div>
+    <div class="card" onclick="alert('Use public meeting points')">📌<h4>Safe Meeting</h4></div>
+    <div class="card" onclick="alert('Safety tips: share your journey')"><i class="fa-solid fa-user-shield"></i><h4>Safety Tips</h4></div>
+</div>
+
+<div class="sos">
+    <h1><i class="fa-regular fa-circle-exclamation"></i> SOS</h1>
+    <p>Emergency alert demo</p>
+    <button onclick="activateSOS()">ACTIVATE SOS</button>
+</div>
+
+</div>
+
+<!-- TRACKING -->
+<div id="tracking" class="page">
+
+<h2>Live Trip Tracking <i class="fa-solid fa-map-location-dot"></i></h2>
+
+<div class="box">
+    <h3>Journey Status</h3>
+    <p id="trackStatus">No active trip.</p>
+    <button class="primary" onclick="startTracking()">Start Demo Trip</button>
+</div>
+
+<div class="box">
+    <h3>Location</h3>
+    <p id="location">Location not started.</p>
+</div>
+
+</div>
+
+<!-- PROFILE -->
+<div id="profile" class="page">
+
+<h2>My Profile</h2>
+
+<div class="box">
+    <h3><i class="fa-solid fa-child-dress"></i> Alie</h3>
+    <p>Verified status: Demo profile</p>
+    <p>Women Travel Community Member</p>
+</div>
+
+<div class="box" onclick="show('booking')">My Bookings →</div>
+<div class="box" onclick="show('partner')">My Travel Partners →</div>
+<div class="box" onclick="show('safety')">Safety Settings →</div>
+
+</div>
+
+</div>
+
+<nav>
+<button onclick="show('home')"><span><i class="fa-solid fa-house-user"></i></span>Home</button>
+<button onclick="show('booking')"><span><i class="fa-solid fa-cable-car"></i></span>Booking</button>
+<button onclick="show('safety')"><span><i class="fa-solid fa-circle-exclamation"></i></span>SOS</button>
+<button onclick="show('community')"><span> <i class="fa-solid fa-people-line"></i></span>Community</button>
+<button onclick="show('profile')"><span><i class="fa-solid fa-user-tie"></i></span>Profile</button>
+</nav>
+<script src="script.js"></script>
+</body>
+</html>
